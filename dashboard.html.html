@@ -1,16 +1,19 @@
-<h1>ProfitPulse Business Analyzer</h1>
-
-<input id="idea" placeholder="Enter business idea">
-
 <select id="city"></select>
 
-<button onclick="generate()">Generate Roadmap</button>
-
-<div id="result"></div>
-
-<button onclick="downloadPDF()">Download PDF</button>
-
 <script src="cities.js"></script>
-<script src="ai.js"></script>
-<script src="valuation.js"></script>
-<script src="pdf.js"></script>
+
+<script>
+
+let select=document.getElementById("city")
+
+cities.forEach(c=>{
+
+let option=document.createElement("option")
+
+option.text=c.city+" - "+c.country
+
+select.add(option)
+
+})
+
+</script>

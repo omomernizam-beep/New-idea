@@ -1,36 +1,42 @@
-<!DOCTYPE html>
-<html>
-<head>
+<body>
 
-<title>ProfitPulse AI</title>
+<div class="slideshow">
 
-<link rel="stylesheet" href="style.css">
+<img src="slide1.jpg">
+<img src="slide2.jpg">
+<img src="slide3.jpg">
 
-</head>
-
-<body class="login-bg">
+</div>
 
 <div class="login-box">
 
 <h1>ProfitPulse</h1>
 
-<input id="email" placeholder="Enter Email">
-
-<input id="password" type="password" placeholder="Password">
+<input type="email" id="email" placeholder="Enter Email">
+<input type="password" id="pass" placeholder="Enter Password">
 
 <button onclick="login()">Login</button>
 
-<button onclick="signup()">Sign Up</button>
+<br><br>
 
-<hr>
+<button>Continue with Google</button>
+<button>Continue with Facebook</button>
 
-<button class="google">Continue with Google</button>
+</div>function login(){
 
-<button class="facebook">Continue with Facebook</button>
+let email=document.getElementById("email").value
+let pass=document.getElementById("pass").value
 
-</div>
+if(email=="" || pass==""){
 
-<script src="auth.js"></script>
+alert("Please enter email and password")
 
-</body>
-</html>
+return
+
+}
+
+alert("Verification email sent (demo)")
+
+window.location="dashboard.html"
+
+}
