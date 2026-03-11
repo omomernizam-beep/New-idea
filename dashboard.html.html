@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>ProfitPulse Analyzer</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>ProfitPulse Business Analyzer</h1>
+
+<textarea id="idea" placeholder="Example: burger shop, clothing brand, software startup"></textarea>
+
+<select id="city">
+
+<option>Karachi</option>
+<option>Lahore</option>
+<option>Dubai</option>
+<option>London</option>
+
+</select>
+
+<button onclick="generate()">Generate Full Roadmap</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+
+function generate(){
+
+let idea=document.getElementById("idea").value.toLowerCase()
+let city=document.getElementById("city").value
+
+let potential=""
+let investment=""
+let breakeven=""
+let monthlyProfit=""
+let valuation=""
+let investor=""
+let location1=""
+let location2=""
+let forecast=""
+let advice=""
+
+if(idea.includes("burger") || idea.includes("food")){
+
+potential="HIGH POTENTIAL"
+
+investment="600,000 – 1,200,000 PKR"
+
+breakeven="8 – 14 months"
+
+monthlyProfit="150k – 350k PKR"
+
+valuation="3 year valuation: 3M – 8M PKR"
+
+investor="Local food investors / franchise buyers"
+
+location1="Shahrah-e-Faisal"
+
+location2="Gulshan-e-Iqbal"
+
+forecast="Year1 small growth → Year3 franchise potential → Year5 chain brand"
+
+advice="Focus on delivery apps and branding"
+
+}
+
+else if(idea.includes("software") || idea.includes("ai") || idea.includes("startup")){
+
+potential="VERY HIGH POTENTIAL"
+
+investment="200,000 – 500,000 PKR"
+
+breakeven="12 – 18 months"
+
+monthlyProfit="300k – 1M PKR"
+
+valuation="3 year valuation: $500k – $2M"
+
+investor="Angel investors / venture capital"
+
+location1="Tech incubators"
+
+location2="Remote team model"
+
+forecast="Year1 MVP → Year3 funding → Year5 exit or acquisition"
+
+advice="Focus on product market fit"
+
+}
+
+else{
+
+potential="MEDIUM POTENTIAL"
+
+investment="200k – 500k PKR"
+
+breakeven="6 – 12 months"
+
+monthlyProfit="70k – 150k PKR"
+
+valuation="3 year valuation: 1M – 3M PKR"
+
+investor="Local investors"
+
+location1="Commercial markets"
+
+location2="Busy malls"
+
+forecast="Year1 stable → Year3 expansion → Year5 brand growth"
+
+advice="Choose high traffic location"
+
+}
+
+document.getElementById("result").innerHTML=
+
+"<h2>Potential: "+potential+"</h2>"+
+
+"<p><b>Best Locations:</b><br>"+location1+"<br>"+location2+"</p>"+
+
+"<p><b>Startup Investment:</b> "+investment+"</p>"+
+
+"<p><b>Break Even:</b> "+breakeven+"</p>"+
+
+"<p><b>Monthly Profit:</b> "+monthlyProfit+"</p>"+
+
+"<p><b>Startup Valuation:</b> "+valuation+"</p>"+
+
+"<p><b>Possible Investors:</b> "+investor+"</p>"+
+
+"<p><b>5 Year Forecast:</b> "+forecast+"</p>"+
+
+"<p><b>AI Advice:</b> "+advice+"</p>"
+
+}
+
+</script>
+
+</body>
+</html>
