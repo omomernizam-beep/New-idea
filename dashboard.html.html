@@ -1,40 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>ProfitPulse Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .dashboard-card {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            border: 1px solid rgba(0, 255, 204, 0.3);
+        }
+        select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            background: #222;
+            color: white;
+            border: 1px solid #444;
+        }
+        .btn-group { display: flex; gap: 10px; justify-content: center; }
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            font-weight: bold;
+        }
+        #pitch-wall {
+            max-height: 400px;
+            overflow-y: auto;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
     <div class="slideshow">
         <img src="slide1.jpg" class="slide active">
         <img src="slide2.jpg" class="slide">
+        <img src="slide3.jpg" class="slide">
     </div>
 
     <div class="overlay">
-        <h1 style="color: #00ffcc;">ProfitPulse Dashboard</h1>
+        <h1 style="color: #00ffcc;">ProfitPulse Portal</h1>
 
-        <div id="entrepreneur-view" style="display:none; background: rgba(0,0,0,0.8); padding: 30px; border-radius: 15px; width: 500px; text-align: center;">
-            <h2 style="color: #00d4ff;">Pitch Your Business</h2>
-            <select id="city-dropdown" style="width: 100%; padding: 10px; margin-bottom: 15px;"></select>
-            <textarea id="idea-text" placeholder="Enter your business idea..." style="width: 100%; height: 100px; padding: 10px; margin-bottom: 15px; border-radius: 5px;"></textarea>
-            <div style="display: flex; gap: 10px; justify-content: center;">
-                <button onclick="generate()" style="background: #007bff;">Preview Roadmap</button>
-                <button onclick="publishPitch()" style="background: #28a745;">Publish for Investors</button>
-                <button onclick="generatePDF()" style="background: #ffc107; color: black;">Download Report</button>
+        <div id="entrepreneur-view" style="display:none;" class="dashboard-card">
+            <h2>Founder's Corner</h2>
+            <p>Select City & Pitch Your Idea</p>
+            <select id="city-dropdown">
+                <option value="">Loading Cities...</option>
+            </select>
+            <textarea id="idea-text" placeholder="Describe your business model and strategy..."></textarea>
+            
+            <div class="btn-group">
+                <button onclick="generate()" style="background: #007bff; color: white;">AI Roadmap</button>
+                <button onclick="publishPitch()" style="background: #28a745; color: white;">Publish Pitch</button>
+                <button onclick="generatePDF()" style="background: #ffc107;">Download PDF</button>
             </div>
-            <div id="result" style="margin-top: 20px; text-align: left;"></div>
+            <div id="result" style="margin-top: 20px;"></div>
         </div>
 
-        <div id="investor-view" style="display:none; background: rgba(0,0,0,0.8); padding: 30px; border-radius: 15px; width: 600px;">
-            <h2 style="text-align: center; color: #2ecc71;">Live Pitches</h2>
-            <div id="pitch-wall" style="max-height: 400px; overflow-y: auto;"></div>
+        <div id="investor-view" style="display:none;" class="dashboard-card">
+            <h2 style="color: #2ecc71;">Investment Opportunities</h2>
+            <div id="pitch-wall">
+                </div>
         </div>
-        
-        <button onclick="window.location='index.html'" style="margin-top: 20px; background: none; border: 1px solid white; color: white; cursor: pointer;">Logout</button>
+
+        <button onclick="window.location='index.html'" style="margin-top: 20px; background: transparent; border: 1px solid white; color: white;">Logout</button>
     </div>
 
-    <script src="cities.js"></script>
-    <script src="ai.js"></script>
+    <script src="cities.js"></script> <script src="ai.js"></script>
     <script src="pdf.js"></script>
     <script src="script.js"></script>
 </body>
