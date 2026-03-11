@@ -2,43 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ProfitPulse - Smart Business Insights</title>
+    <title>ProfitPulse - Strategic Login</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .split-container { display: flex; gap: 20px; margin-top: 20px; }
-        .login-side { 
-            background: rgba(255, 255, 255, 0.1); 
-            padding: 30px; 
-            border-radius: 15px; 
-            flex: 1; 
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-    </style>
 </head>
 <body>
     <div class="slideshow">
         <img src="slide1.jpg" class="slide active">
         <img src="slide2.jpg" class="slide">
-        <img src="slide3.jpg" class="slide">
     </div>
 
     <div class="overlay">
-        <h1 style="color: #00ffcc; font-size: 3rem; margin: 0;">ProfitPulse</h1>
-        <p style="font-style: italic; color: #ccc;">"Bridging Visionary Founders with Strategic Capital"</p>
+        <h1 style="color: #00ffcc; font-size: 3rem;">ProfitPulse</h1>
+        <p style="color: #ccc; margin-bottom: 30px;">"Connecting Founders with Capital"</p>
 
-        <div class="split-container">
-            <div class="login-side">
+        <div style="display: flex; gap: 40px; padding: 40px; background: rgba(0,0,0,0.7); border-radius: 20px; backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1);">
+            <div style="text-align: center; width: 250px;">
                 <h2 style="color: #00d4ff;">Founders</h2>
-                <input id="email-e" placeholder="Email">
-                <input id="pass-e" type="password" placeholder="Password">
-                <button onclick="login('entrepreneur')" style="width: 100%; background: #007bff;">Login to Pitch</button>
+                <input id="email-e" placeholder="Email" style="width: 90%; margin-bottom: 10px;">
+                <input id="pass-e" type="password" placeholder="Password" style="width: 90%; margin-bottom: 10px;">
+                <button onclick="login('entrepreneur')" style="width: 100%; background: #007bff; border: none; padding: 12px; color: white; border-radius: 5px; cursor: pointer;">Login as Founder</button>
             </div>
 
-            <div class="login-side">
+            <div style="width: 1px; background: rgba(255,255,255,0.2);"></div>
+
+            <div style="text-align: center; width: 250px;">
                 <h2 style="color: #2ecc71;">Investors</h2>
-                <input id="email-i" placeholder="Email">
-                <input id="pass-i" type="password" placeholder="Password">
-                <button onclick="login('investor')" style="width: 100%; background: #28a745;">Login to Invest</button>
+                <input id="email-i" placeholder="Email" style="width: 90%; margin-bottom: 10px;">
+                <input id="pass-i" type="password" placeholder="Password" style="width: 90%; margin-bottom: 10px;">
+                <button onclick="login('investor')" style="width: 100%; background: #28a745; border: none; padding: 12px; color: white; border-radius: 5px; cursor: pointer;">Login as Investor</button>
             </div>
         </div>
     </div>
