@@ -1,50 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <title>ProfitPulse AI</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="style.css">
+
 </head>
 
-<body>
-
-<div class="slideshow"></div>
+<body class="login-bg">
 
 <div class="login-box">
 
-<h1>ProfitPulse AI</h1>
+<h1>ProfitPulse</h1>
 
-<input id="name" placeholder="Enter your name">
+<input id="email" placeholder="Enter Email">
 
-<select id="language">
-<option>English</option>
-<option>Urdu</option>
-</select>
+<input id="password" type="password" placeholder="Password">
 
-<input id="country" placeholder="Detecting location..." readonly>
+<button onclick="login()">Login</button>
 
-<button onclick="start()">Enter Dashboard</button>
+<button onclick="signup()">Sign Up</button>
+
+<hr>
+
+<button class="google">Continue with Google</button>
+
+<button class="facebook">Continue with Facebook</button>
 
 </div>
 
-<script>
-
-fetch("https://ipapi.co/json/")
-.then(res=>res.json())
-.then(data=>{
-document.getElementById("country").value = data.city + ", " + data.country_name
-})
-
-function start(){
-
-let name=document.getElementById("name").value
-localStorage.setItem("user",name)
-
-window.location="dashboard.html"
-
-}
-
-</script>
+<script src="auth.js"></script>
 
 </body>
 </html>
