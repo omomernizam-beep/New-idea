@@ -1,29 +1,22 @@
-function generate(){
+function generate() {
+    let idea = document.getElementById("idea").value;
+    let result = document.getElementById("result");
 
-let idea=document.getElementById("idea").value
+    if (idea.length < 15) {
+        alert("Bhai, thora detail mein idea likho!");
+        return;
+    }
 
-if(idea.length<10){
+    let category = "General";
+    if (idea.toLowerCase().includes("tech") || idea.toLowerCase().includes("app")) category = "High-Tech";
+    if (idea.toLowerCase().includes("food")) category = "Retail/F&B";
 
-alert("Please enter real business idea")
-
-return
-
-}
-
-let output=`
-
-<h2>Business Potential: Medium</h2>
-
-<p>Recommended Location: High traffic markets</p>
-
-<p>Startup Investment: 200k – 500k PKR</p>
-
-<p>Break Even: 6 – 12 months</p>
-
-<p>Growth Plan: Online + physical expansion</p>
-
-`
-
-document.getElementById("result").innerHTML=output
-
+    let output = `
+        <h3>AI Advisor Report</h3>
+        <p><b>Category:</b> ${category}</p>
+        <p><b>Risk Level:</b> ${category === "High-Tech" ? "Medium" : "Low"}</p>
+        <p><b>Strategy:</b> Focus on ${category === "High-Tech" ? "Scalability" : "Local Quality"}.</p>
+        <p><b>Investment:</b> 500k - 2M PKR</p>
+    `;
+    result.innerHTML = output;
 }

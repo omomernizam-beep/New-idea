@@ -1,42 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<title>Dashboard</title>
-<link rel="stylesheet" href="style.css">
-
+    <title>AI Startup Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <div class="slideshow">
+        <img src="slide1.jpg" class="slide active">
+        <img src="slide2.jpg" class="slide">
+        <img src="slide3.jpg" class="slide">
+    </div>
 
-<div class="slideshow">
-<img src="slide1.jpg" class="slide active">
-<img src="slide2.jpg" class="slide">
-<img src="slide3.jpg" class="slide">
-<img src="slide4.jpg" class="slide">
-</div>
+    <div class="overlay">
+        <div class="dashboard-card">
+            <h1>Startup Dashboard</h1>
+            <select id="city"></select><br>
+            <textarea id="idea" placeholder="Describe your business idea..." style="height: 60px;"></textarea><br>
 
-<div class="overlay">
+            <button onclick="generate()">AI Advice</button>
+            <button onclick="calculateValuation()">Valuation</button>
+            <button onclick="findInvestor()">Find Investor</button>
+            <button onclick="generatePDF()">Download Report</button>
 
-<h1>Startup Dashboard</h1>
+            <div id="result">Results will appear here...</div>
+        </div>
+    </div>
 
-<select id="city"></select>
-
-<br><br>
-
-<button onclick="calculateValuation()">Startup Valuation</button>
-<button onclick="findInvestor()">Find Investor</button>
-<button onclick="generatePDF()">Generate PDF</button>
-
-<div id="result"></div>
-
-</div>
-
-<script src="cities.js"></script>
-<script src="valuation.js"></script>
-<script src="investor.js"></script>
-<script src="pdf.js"></script>
-<script src="script.js"></script>
-
+    <script src="cities.js"></script>
+    <script src="ai.js"></script>
+    <script src="valuation.js"></script>
+    <script src="investor.js"></script>
+    <script src="pdf.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
