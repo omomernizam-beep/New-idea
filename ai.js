@@ -1,22 +1,21 @@
 function generate() {
-    let idea = document.getElementById("idea").value;
-    let result = document.getElementById("result");
+    let idea = document.getElementById("idea-input").value;
+    let resultDiv = document.getElementById("result");
 
-    if (idea.length < 15) {
-        alert("Bhai, thora detail mein idea likho!");
-        return;
+    if (idea.length < 10) {
+        alert("Bhai, idea toh likho!"); return;
     }
 
-    let category = "General";
-    if (idea.toLowerCase().includes("tech") || idea.toLowerCase().includes("app")) category = "High-Tech";
-    if (idea.toLowerCase().includes("food")) category = "Retail/F&B";
-
-    let output = `
-        <h3>AI Advisor Report</h3>
-        <p><b>Category:</b> ${category}</p>
-        <p><b>Risk Level:</b> ${category === "High-Tech" ? "Medium" : "Low"}</p>
-        <p><b>Strategy:</b> Focus on ${category === "High-Tech" ? "Scalability" : "Local Quality"}.</p>
-        <p><b>Investment:</b> 500k - 2M PKR</p>
+    let roadmap = `
+        <div id="roadmap-content">
+            <h2 style="color: #00d4ff;">Strategic Roadmap (Assumptions)</h2>
+            <ul style="text-align: left; line-height: 1.8;">
+                <li><b>Month 1-2 (MVP):</b> Build core features and test with 100 users.</li>
+                <li><b>Month 3-6 (Market Fit):</b> Launch in selected city. Assumption: 5% conversion rate.</li>
+                <li><b>Month 7-12 (Scaling):</b> Seek $50k seed funding for expansion.</li>
+                <li><b>Break-even:</b> Estimated at 14 months based on current market trends.</li>
+            </ul>
+        </div>
     `;
-    result.innerHTML = output;
+    resultDiv.innerHTML = roadmap;
 }
