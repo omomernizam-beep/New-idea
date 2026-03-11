@@ -1,77 +1,42 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 
-<title>ProfitPulse Business Analyzer</title>
-
+<title>Dashboard</title>
 <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<h1>ProfitPulse Business Analyzer</h1>
+<div class="slideshow">
+<img src="slide1.jpg" class="slide active">
+<img src="slide2.jpg" class="slide">
+<img src="slide3.jpg" class="slide">
+<img src="slide4.jpg" class="slide">
+</div>
 
-<input type="text" id="idea" placeholder="Enter business idea">
+<div class="overlay">
 
-<br>
+<h1>Startup Dashboard</h1>
 
 <select id="city"></select>
 
-<br>
+<br><br>
 
-<button onclick="analyze()">Generate Roadmap</button>
+<button onclick="calculateValuation()">Startup Valuation</button>
+<button onclick="findInvestor()">Find Investor</button>
+<button onclick="generatePDF()">Generate PDF</button>
 
 <div id="result"></div>
 
+</div>
+
 <script src="cities.js"></script>
-
-<script>
-
-let select=document.getElementById("city")
-
-cities.forEach(c=>{
-
-let option=document.createElement("option")
-
-option.text=c.city+" - "+c.country
-
-select.add(option)
-
-})
-
-function analyze(){
-
-let idea=document.getElementById("idea").value
-
-if(idea==""){
-
-alert("Please enter business idea")
-
-return
-
-}
-
-let output=`
-
-<h2>Business Potential: Medium</h2>
-
-<p>Recommended Location: High traffic markets</p>
-
-<p>Startup Investment: 200k – 500k PKR</p>
-
-<p>Break Even: 6 – 12 months</p>
-
-<p>Growth Plan: Online + physical expansion</p>
-
-`
-
-document.getElementById("result").innerHTML=output
-
-}
-
-</script>
+<script src="valuation.js"></script>
+<script src="investor.js"></script>
+<script src="pdf.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>

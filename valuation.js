@@ -1,7 +1,9 @@
-function valuation(revenue){
+function calculateValuation(){
 
-let multiple=4
+let value=Math.floor(Math.random()*1000000)
 
-return revenue*multiple
+document.getElementById("result").innerHTML=
+
+"Estimated Startup Valuation: $" + value
 
 }

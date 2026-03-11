@@ -1,8 +1,18 @@
+function findInvestor(){
+
 let investors=[
 
-"Angel Investors Pakistan",
-"Dubai Venture Capital",
-"UK Startup Fund",
-"Silicon Valley Seed Fund"
+"Sequoia Capital",
+"Y Combinator",
+"SoftBank",
+"Angel Investor Network"
 
 ]
+
+let r=Math.floor(Math.random()*investors.length)
+
+document.getElementById("result").innerHTML=
+
+"Recommended Investor: "+investors[r]
+
+}

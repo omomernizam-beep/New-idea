@@ -1,66 +1,41 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
-<title>ProfitPulse</title>
+<meta charset="UTF-8">
+<title>AI Business Advisor</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
 <div class="slideshow">
-
-<img src="./slide1.jpg">
-<img src="./slide2.jpg">
-<img src="./slide3.jpg">
-<img src="./slide4.jpg">
-
+<img src="slide1.jpg" class="slide active">
+<img src="slide2.jpg" class="slide">
+<img src="slide3.jpg" class="slide">
+<img src="slide4.jpg" class="slide">
 </div>
 
+<div class="overlay">
+
+<h1>AI Business Advisor</h1>
 
 <div class="login-box">
 
-<h1>ProfitPulse</h1>
-
-<input type="email" id="email" placeholder="Enter Email">
-
-<br>
-
-<input type="password" id="pass" placeholder="Enter Password">
-
-<br>
+<input id="email" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
 
 <button onclick="login()">Login</button>
 
-<br><br>
+<p>or</p>
 
-<button>Continue with Google</button>
-<button>Continue with Facebook</button>
+<button onclick="googleLogin()">Sign in with Google</button>
 
 </div>
 
+</div>
 
-<script>
-
-function login(){
-
-let email=document.getElementById("email").value
-let pass=document.getElementById("pass").value
-
-if(email=="" || pass=="")
-{
-alert("Please enter email and password")
-return
-}
-
-window.location="dashboard.html"
-
-}
-
-</script>
+<script src="auth.js"></script>
+<script src="script.js"></script>
 
 </body>
-
 </html>

@@ -1,16 +1,22 @@
 function login(){
 
 let email=document.getElementById("email").value
+let pass=document.getElementById("password").value
 
-if(email==""){
+if(email=="" || pass==""){
 
-alert("Please enter email")
-
+alert("Please enter details")
 return
 
 }
 
-localStorage.setItem("user",email)
+window.location="dashboard.html"
+
+}
+
+function googleLogin(){
+
+alert("Google login demo")
 
 window.location="dashboard.html"
 

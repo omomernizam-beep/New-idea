@@ -1,13 +1,15 @@
-function downloadPDF(){
+function generatePDF(){
 
-const { jsPDF } = window.jspdf
+let text=document.getElementById("result").innerText
 
-let doc=new jsPDF()
+let blob=new Blob([text],{type:"application/pdf"})
 
-doc.text("ProfitPulse Business Report",20,20)
+let a=document.createElement("a")
 
-doc.text(document.getElementById("result").innerText,20,40)
+a.href=URL.createObjectURL(blob)
 
-doc.save("business-report.pdf")
+a.download="startup-report.pdf"
+
+a.click()
 
 }
