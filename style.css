@@ -3,19 +3,21 @@ body{
 margin:0;
 font-family:Arial;
 
-background:linear-gradient(120deg,#1e3c72,#2a5298);
-
+background:#0f2027;
 color:white;
 
 text-align:center;
 
 }
 
+
+/* LOGIN BOX */
+
 .login-box{
 
-margin-top:150px;
+margin-top:180px;
 
-background:rgba(0,0,0,0.6);
+background:rgba(0,0,0,0.7);
 
 padding:40px;
 
@@ -25,15 +27,21 @@ border-radius:10px;
 
 }
 
+
 input{
 
 padding:10px;
 
 margin:10px;
 
-width:200px;
+width:220px;
+
+border:none;
+
+border-radius:5px;
 
 }
+
 
 button{
 
@@ -43,20 +51,33 @@ margin:10px;
 
 cursor:pointer;
 
+border:none;
+
+border-radius:5px;
+
+background:#00c6ff;
+color:white;
+
 }
 
-/* slideshow */
+
+button:hover{
+
+background:#0072ff;
+
+}
+
+
+/* SLIDESHOW */
 
 .slideshow{
 
 position:fixed;
 
 top:0;
-
 left:0;
 
 width:100%;
-
 height:100%;
 
 z-index:-1;
@@ -65,12 +86,12 @@ overflow:hidden;
 
 }
 
+
 .slideshow img{
 
 position:absolute;
 
 width:100%;
-
 height:100%;
 
 object-fit:cover;
@@ -81,22 +102,19 @@ opacity:0;
 
 }
 
+
 .slideshow img:nth-child(1){animation-delay:0s}
+.slideshow img:nth-child(2){animation-delay:5s}
+.slideshow img:nth-child(3){animation-delay:10s}
+.slideshow img:nth-child(4){animation-delay:15s}
 
-.slideshow img:nth-child(2){animation-delay:7s}
-
-.slideshow img:nth-child(3){animation-delay:14s}
 
 @keyframes slide{
 
 0%{opacity:0}
-
 10%{opacity:1}
-
-30%{opacity:1}
-
-40%{opacity:0}
-
+25%{opacity:1}
+35%{opacity:0}
 100%{opacity:0}
 
 }

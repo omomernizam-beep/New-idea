@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>ProfitPulse</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
 <body>
 
 <div class="slideshow">
@@ -5,6 +14,7 @@
 <img src="slide1.jpg">
 <img src="slide2.jpg">
 <img src="slide3.jpg">
+<img src="slide4.jpg">
 
 </div>
 
@@ -13,7 +23,10 @@
 <h1>ProfitPulse</h1>
 
 <input type="email" id="email" placeholder="Enter Email">
+
 <input type="password" id="pass" placeholder="Enter Password">
+
+<br>
 
 <button onclick="login()">Login</button>
 
@@ -22,7 +35,12 @@
 <button>Continue with Google</button>
 <button>Continue with Facebook</button>
 
-</div>function login(){
+</div>
+
+
+<script>
+
+function login(){
 
 let email=document.getElementById("email").value
 let pass=document.getElementById("pass").value
@@ -30,13 +48,17 @@ let pass=document.getElementById("pass").value
 if(email=="" || pass==""){
 
 alert("Please enter email and password")
-
 return
 
 }
 
-alert("Verification email sent (demo)")
+alert("Login successful")
 
 window.location="dashboard.html"
 
 }
+
+</script>
+
+</body>
+</html>
