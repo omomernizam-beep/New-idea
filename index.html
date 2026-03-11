@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
 <title>ProfitPulse</title>
@@ -11,18 +12,21 @@
 
 <div class="slideshow">
 
-<img src="slide1.jpg">
-<img src="slide2.jpg">
-<img src="slide3.jpg">
-<img src="slide4.jpg">
+<img src="./slide1.jpg">
+<img src="./slide2.jpg">
+<img src="./slide3.jpg">
+<img src="./slide4.jpg">
 
 </div>
+
 
 <div class="login-box">
 
 <h1>ProfitPulse</h1>
 
 <input type="email" id="email" placeholder="Enter Email">
+
+<br>
 
 <input type="password" id="pass" placeholder="Enter Password">
 
@@ -45,14 +49,11 @@ function login(){
 let email=document.getElementById("email").value
 let pass=document.getElementById("pass").value
 
-if(email=="" || pass==""){
-
+if(email=="" || pass=="")
+{
 alert("Please enter email and password")
 return
-
 }
-
-alert("Login successful")
 
 window.location="dashboard.html"
 
@@ -61,4 +62,5 @@ window.location="dashboard.html"
 </script>
 
 </body>
+
 </html>
