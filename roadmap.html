@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>ProfitPulse</title>
+
+<style>
+
+body{
+background:#0B0F1A;
+color:white;
+font-family:Arial;
+padding:40px;
+}
+
+textarea{
+width:100%;
+height:120px;
+background:#111827;
+border:1px solid #333;
+color:white;
+padding:10px;
+}
+
+button{
+margin-top:10px;
+padding:12px 20px;
+background:#4F46E5;
+border:none;
+color:white;
+cursor:pointer;
+}
+
+.result{
+margin-top:30px;
+background:#111827;
+padding:20px;
+border-radius:8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>ProfitPulse Business Analyzer</h1>
+
+<textarea id="idea" placeholder="Example: Burger shop"></textarea>
+
+<br>
+
+<button onclick="generate()">Generate Roadmap</button>
+
+<div class="result" id="result"></div>
+
+<script>
+
+function generate(){
+
+let idea=document.getElementById("idea").value.toLowerCase()
+
+let potential=""
+let location1=""
+let location2=""
+let cost=""
+let breakeven=""
+let profit=""
+
+if(idea.includes("burger") || idea.includes("food")){
+
+potential="HIGH POTENTIAL 🍔"
+
+location1="Shahrah-e-Faisal Karachi"
+location2="Gulshan-e-Iqbal Block 13"
+
+cost="Estimated Cost: 500,000 – 900,000 PKR"
+
+breakeven="Break-even: 8 – 14 months"
+
+profit="Estimated Monthly Profit: 120,000 – 300,000 PKR"
+
+}
+
+else if(idea.includes("online") || idea.includes("website")){
+
+potential="VERY HIGH POTENTIAL 🚀"
+
+location1="Operate from Home"
+location2="Sell via Instagram / Daraz"
+
+cost="Estimated Cost: 50,000 – 150,000 PKR"
+
+breakeven="Break-even: 3 – 6 months"
+
+profit="Estimated Monthly Profit: 80,000 – 250,000 PKR"
+
+}
+
+else{
+
+potential="MEDIUM POTENTIAL"
+
+location1="Saddar Market Karachi"
+location2="Clifton Block 5"
+
+cost="Estimated Cost: 200,000 – 500,000 PKR"
+
+breakeven="Break-even: 6 – 12 months"
+
+profit="Estimated Monthly Profit: 60,000 – 150,000 PKR"
+
+}
+
+document.getElementById("result").innerHTML=
+
+"<h2>"+potential+"</h2>"+
+
+"<h3>Best Locations</h3>"+
+
+"<p>1️⃣ "+location1+"<br>2️⃣ "+location2+"</p>"+
+
+"<h3>"+cost+"</h3>"+
+
+"<h3>"+breakeven+"</h3>"+
+
+"<h3>"+profit+"</h3>"
+
+}
+
+</script>
+
+</body>
+</html>
