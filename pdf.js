@@ -1,23 +1,14 @@
 function generatePDF() {
-    let roadmapContent = document.getElementById("result").innerText;
-    
-    if(roadmapContent.includes("Results will appear")) {
-        alert("Pehle Roadmap generate karen!"); return;
+    let content = document.getElementById("result").innerText;
+    if(content.includes("Results will appear")) {
+        alert("Pehle roadmap generate karen!"); return;
     }
 
-    let report = `
-    PROFITPULSE BUSINESS REPORT
-    ---------------------------
-    Date: ${new Date().toLocaleDateString()}
+    let finalReport = `PROFITPULSE - OFFICIAL BUSINESS CASE\n\n${content}\n\nGenerated for: M. Omar Nizam\nAssumptions: Market data 2026`;
     
-    ${roadmapContent}
-    
-    Disclaimer: This roadmap is based on AI assumptions and market data.
-    `;
-
-    let blob = new Blob([report], { type: "text/plain" });
-    let link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "ProfitPulse_Roadmap.txt";
-    link.click();
+    let blob = new Blob([finalReport], { type: "text/plain" });
+    let a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "ProfitPulse_Investor_Pitch.txt";
+    a.click();
 }

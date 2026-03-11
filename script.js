@@ -1,25 +1,23 @@
-// Slideshow Logic
+// Background Slideshow
 let slides = document.querySelectorAll(".slide");
 let index = 0;
-
-if (slides.length > 0) {
-    setInterval(() => {
+setInterval(() => {
+    if(slides.length > 0) {
         slides[index].classList.remove("active");
         index = (index + 1) % slides.length;
         slides[index].classList.add("active");
-    }, 4000);
-}
+    }
+}, 4000);
 
-// Populate Cities Dropdown on Load
+// Populate Cities on Dashboard
 window.onload = function() {
-    const cityDropdown = document.getElementById("city-select");
-    // Cities variable cities.js se aa raha hai
-    if (typeof cities !== 'undefined' && cityDropdown) {
+    const citySelect = document.getElementById("city"); // dashboard.html wali ID
+    if (citySelect && typeof cities !== 'undefined') {
         cities.forEach(c => {
-            let option = document.createElement("option");
-            option.value = c.population;
-            option.text = `${c.city}, ${c.country}`;
-            cityDropdown.add(option);
+            let opt = document.createElement("option");
+            opt.value = c.population;
+            opt.innerHTML = `${c.city}, ${c.country}`;
+            citySelect.appendChild(opt);
         });
     }
 };
