@@ -74,4 +74,13 @@ button:hover { background: #0056b3; transform: scale(1.05); }
     border-radius: 10px;
     max-width: 400px;
     line-height: 1.6;
+}/* Trademark Styling */
+p span {
+    text-shadow: 0 0 5px rgba(0, 255, 204, 0.5);
+    transition: 0.3s;
+}
+
+p span:hover {
+    color: #ffffff;
+    text-shadow: 0 0 15px #00ffcc;
 }

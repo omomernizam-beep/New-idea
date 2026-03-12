@@ -26,5 +26,11 @@ function renderCities() {
         });
     }
 }
-
+function logoutUser() {
+    // Session clear karna
+    localStorage.removeItem("userRole");
+    
+    // Wapis login page par le jana
+    window.location.href = "index.html";
+}
 // Baki slideshow aur publish functions neechay wese hi rahen ge...
