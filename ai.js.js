@@ -1,45 +1,25 @@
 function generate() {
-    console.log("Button clicked, generating roadmap...");
-
-    // Sahi IDs pakarna
-    const ideaBox = document.getElementById("idea-text");
+    const idea = document.getElementById("idea-text").value.trim();
     const citySelect = document.getElementById("city-dropdown");
-    const resultDiv = document.getElementById("result");
+    const result = document.getElementById("result");
 
-    // Debugging check
-    if (!ideaBox || !resultDiv) {
-        console.error("IDs nahi mili! HTML mein 'idea-text' aur 'result' check karen.");
-        alert("System Error: IDs mismatch. Check Console (F12).");
-        return;
-    }
-
-    const idea = ideaBox.value.trim();
     if (idea.length < 5) {
-        alert("Bhai, thora sa idea toh likhen!");
+        alert("Please enter a valid idea!");
         return;
     }
 
-    const cityName = citySelect.options[citySelect.selectedIndex]?.text || "Target Market";
-    const marketReach = parseInt(citySelect.value).toLocaleString() || "0";
+    const cityName = citySelect.options[citySelect.selectedIndex]?.text || "Local Market";
+    const population = parseInt(citySelect.value) || 1000000;
 
-    // Roadmap Design
-    const roadmapHTML = `
-        <div style="background: rgba(0, 212, 255, 0.15); padding: 20px; border-radius: 12px; border: 1px solid #00d4ff; color: white; margin-top: 20px; text-align: left;">
-            <h3 style="color: #00ffcc; margin-top: 0; border-bottom: 1px solid #00d4ff; padding-bottom: 5px;">🚀 ProfitPulse Roadmap: ${cityName}</h3>
-            <p style="font-size: 0.9rem; color: #ccc;"><b>Pitch Idea:</b> ${idea}</p>
-            
-            <div style="margin-top: 15px;">
-                <p>📅 <b>Month 1-3 (Foundations):</b> MVP development focusing on ${cityName} users. Assumption: Market reach of ${marketReach} people.</p>
-                <p>📈 <b>Month 4-8 (Growth):</b> Beta testing & local marketing campaigns. Goal: 5% conversion rate.</p>
-                <p>💰 <b>Month 9-14 (Scaling):</b> Profitability phase and Series A investor pitching.</p>
-            </div>
-            
-            <div style="background: rgba(46, 204, 113, 0.2); padding: 10px; border-radius: 5px; margin-top: 10px; border: 1px solid #2ecc71;">
-                <small><b>AI Prediction:</b> Location-based success probability is 85%.</small>
+    result.innerHTML = `
+        <div style="background:rgba(0,123,255,0.1); padding:15px; border-radius:10px; border:1px solid #007bff; margin-top:15px; text-align:left;">
+            <h4 style="color:#00ffcc; margin:0 0 10px 0;">Strategic Roadmap for ${cityName.split(',')[0]}</h4>
+            <p style="font-size:13px; color:#ccc; margin-bottom:10px;">Targeting a market of ${population.toLocaleString()} residents.</p>
+            <div style="border-left:2px solid #007bff; padding-left:10px; font-size:14px;">
+                <p>📍 <b>Phase 1:</b> Localized launch for "${idea.substring(0, 20)}...".</p>
+                <p>📍 <b>Phase 2:</b> Scale marketing to 10% of ${cityName}.</p>
+                <p>📍 <b>Phase 3:</b> Investor pitch based on traction.</p>
             </div>
         </div>
     `;
-
-    resultDiv.innerHTML = roadmapHTML;
-    console.log("Roadmap generated successfully!");
 }

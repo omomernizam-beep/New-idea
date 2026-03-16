@@ -2,88 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ProfitPulse Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProfitPulse | Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .dashboard-card {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 30px;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 600px;
-            text-align: center;
-            border: 1px solid rgba(0, 255, 204, 0.3);
+        body { font-family: 'Segoe UI', sans-serif; background: #0a0a0a; color: white; margin: 0; }
+        .overlay { display: flex; flex-direction: column; align-items: center; padding: 50px 20px; min-height: 100vh; }
+        .dashboard-card { 
+            background: rgba(20, 20, 20, 0.95); 
+            padding: 30px; 
+            border-radius: 15px; 
+            width: 100%; 
+            max-width: 650px; 
+            border: 1px solid rgba(0, 255, 204, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-        select, textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            background: #222;
-            color: white;
-            border: 1px solid #444;
+        select, textarea { 
+            width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 8px; 
+            background: #1a1a1a; color: white; border: 1px solid #333; font-size: 1rem;
         }
-        button {
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 5px;
-            border: none;
-            background: #007bff;
-            color: white;
-            font-weight: bold;
-        }
+        textarea { height: 120px; resize: none; }
+        .btn-row { display: flex; gap: 10px; margin-bottom: 20px; }
+        button { flex: 1; padding: 12px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        .btn-ai { background: #007bff; color: white; }
+        .btn-pub { background: #28a745; color: white; }
+        .btn-pdf { background: #ffc107; color: black; }
+        .btn-logout { background: transparent; border: 1px solid #ff4d4d; color: #ff4d4d; margin-top: 20px; }
+        #pitch-wall { max-height: 400px; overflow-y: auto; }
+        .trademark { margin-top: 40px; color: #555; font-size: 12px; letter-spacing: 2px; }
     </style>
 </head>
 <body>
-    <div class="slideshow">
-        <img src="slide1.jpg" class="slide active">
-        <img src="slide2.jpg" class="slide">
-    </div>
-
     <div class="overlay">
-        <h1 style="color: #00ffcc;">ProfitPulse Dashboard</h1>
+        <h1 style="color: #00ffcc; margin-bottom: 30px;">PROFITPULSE PORTAL</h1>
 
-        <div id="entrepreneur-view" style="display:none;" class="dashboard-card">
-            <h2>Founder Section</h2>
+        <div id="entrepreneur-view" class="dashboard-card" style="display:none;">
+            <h2 style="margin-top:0;">Founder's Hub</h2>
+            <p style="color:#aaa;">Select market and define your strategy:</p>
+            
             <select id="city-dropdown">
-                <option value="">Searching cities...</option>
+                <option value="">Loading Cities...</option>
             </select>
             
-            <textarea id="idea-text" placeholder="Apna business idea likhen..."></textarea>
+            <textarea id="idea-text" placeholder="Explain your business model... (e.g. AI-driven logistics in Karachi)"></textarea>
             
-            <div style="display: flex; gap: 10px; justify-content: center;">
-                <button onclick="generate()">AI Roadmap</button>
-                <button onclick="publishPitch()" style="background: #28a745;">Publish</button>
-                <button onclick="generatePDF()" style="background: #ffc107; color: black;">PDF</button>
+            <div class="btn-row">
+                <button class="btn-ai" onclick="generate()">AI Roadmap</button>
+                <button class="btn-pub" onclick="publishPitch()">Publish Pitch</button>
+                <button class="btn-pdf" onclick="generatePDF()">Export PDF</button>
             </div>
+            
             <div id="result"></div>
         </div>
 
-        <div id="investor-view" style="display:none;" class="dashboard-card">
-            <h2 style="color: #2ecc71;">Investor Feed</h2>
+        <div id="investor-view" class="dashboard-card" style="display:none;">
+            <h2 style="margin-top:0; color:#2ecc71;">Investment Opportunities</h2>
             <div id="pitch-wall"></div>
         </div>
 
-        <button onclick="window.location='index.html'" style="margin-top: 20px; background: none; border: 1px solid white;">Logout</button>
+        <button class="btn-logout" onclick="logoutUser()">Logout</button>
+        
+        <p class="trademark">CREATED BY FLANKER DELTA</p>
     </div>
-<script src="cities.js"></script>
-    <script src="ai.js"></script>
-    <script src="script.js"></script>
-    <script src="pdf.js"></script>
-</body>
+
     <script src="cities.js"></script>
-    <script src="script.js"></script>
     <script src="ai.js"></script>
     <script src="pdf.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
-<div style="margin-top: 30px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
-    
-    <button onclick="logoutUser()" style="background: #e74c3c; color: white; padding: 10px 25px; border-radius: 5px; border: none; cursor: pointer; font-weight: bold; transition: 0.3s;">
-        Logout from ProfitPulse
-    </button>
-<button onclick="publishPitch()" style="background: #28a745;">Publish Pitch</button>
-    <p style="margin-top: 25px; color: rgba(255,255,255,0.4); font-size: 0.75rem; letter-spacing: 2px; font-weight: bold;">
-        &copy; 2026 PROFITPULSE | <span style="color: #00ffcc;">CREATED BY FLANKER DELTA</span>
-    </p>
-</div>
